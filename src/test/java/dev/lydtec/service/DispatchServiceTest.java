@@ -1,5 +1,6 @@
 package dev.lydtec.service;
 
+import dev.lydtec.dispatch.message.OrderCreated;
 import dev.lydtec.dispatch.service.DispatchService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,6 @@ class DispatchServiceTest {
 
     @Test
     void process() {
-        service.process("payload");
+        service.process(OrderCreated.builder().build());
     }
 }
