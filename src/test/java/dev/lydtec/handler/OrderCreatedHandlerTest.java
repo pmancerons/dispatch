@@ -23,7 +23,7 @@ class OrderCreatedHandlerTest {
     private OrderCreatedHandler orderCreatedHandler;
 
     @Test
-    void listen() {
+    void listen() throws Exception {
         var orderCreated = TestEventData.buildOrderCreatedEvent(UUID.randomUUID(),UUID.randomUUID().toString());
         orderCreatedHandler.listen(orderCreated);
         Mockito.verify(dispatchService,Mockito.times(1)).process(orderCreated);
